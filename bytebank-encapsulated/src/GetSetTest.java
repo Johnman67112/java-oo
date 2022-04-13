@@ -1,9 +1,8 @@
 
 public class GetSetTest {
 	public static void main(String[] args) {
-		Account account = new Account();
-		//account.number = 13337;
-		account.setNumber(1337);
+		Account account = new Account(1337, 24226);
+		
 		System.out.println(account.getNumber());
 		
 		Client john = new Client();

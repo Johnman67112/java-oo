@@ -2,9 +2,18 @@
 
 public class Account {
 	private double balance;
-	private int agency = 42;
+	private int agency;
 	private int number;
 	private Client owner;
+	private static int total;
+	
+	public Account(int agency, int number) {
+		Account.total++;
+		System.out.println("Account total: " + Account.total);
+		this.agency = agency;
+		this.number = number;
+		System.out.println("i am building an account " + this.number);
+	}
 	
 	public void deposit(double value) {
 		this.balance += value;
@@ -36,6 +45,10 @@ public class Account {
 	}
 	
 	public void setNumber(int number) {
+		if(number <= 0) {
+			System.out.println("invalid number");
+			return;
+		}
 		this.number = number;
 	}
 	
@@ -44,6 +57,10 @@ public class Account {
 	}
 	
 	public void setAgency(int agency) {
+		if(agency <= 0) {
+			System.out.println("invalid value");
+			return;
+		}
 		this.agency = agency;
 	}
 	
@@ -53,6 +70,10 @@ public class Account {
 	
 	public Client getOwner() {
 		return this.owner;
+	}
+	
+	public static int getTotal() {
+		return Account.total;
 	}
 	
 }
