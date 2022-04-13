@@ -25,5 +25,8 @@ public class MethodTest {
 		
 		System.out.println(mariaAccount.balance);
 		System.out.println(johnAccount.balance);
+		
+		johnAccount.owner = "John Man";
+		System.out.println(johnAccount.owner);
 	}
 }
